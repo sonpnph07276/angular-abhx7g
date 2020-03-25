@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Product} from '../Product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,10 +8,13 @@ import {Product} from '../Product';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-@Input('data') product : Product;
-  constructor() { }
+// @Input('data') product : Product;
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
+    this.productService.getProduct();
   }
 
 }

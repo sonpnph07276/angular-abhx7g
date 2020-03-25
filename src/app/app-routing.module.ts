@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "services", component: ServicesComponent },
   { path: "contact", component: ContactComponent },
+  { path: "id", component: ProductDetailComponent },
   { path: "404", component: NotFoundComponent },
   { path: "**", redirectTo: "404", pathMatch: "full" }
 ];

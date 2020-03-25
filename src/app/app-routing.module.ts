@@ -5,9 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
 import {ProductManagerComponent} from './product-manager/product-manager.component'
-import { ServiceComponent } from './service/service.component';
-import { ContactComponent } from './contact/contact.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
@@ -18,10 +16,7 @@ const routes: Routes = [
   { path: "product-add", component: AddProductComponent},
   { path: "product-detail/:id", component: ProductDetailComponent},
   { path: "about", component: AboutComponent},
-  { path: "service", component: ServiceComponent},
-  { path: "contact", component: ContactComponent},
   { path: "product-manager", component: ProductManagerComponent},
-  { path :"404", component :NotFoundComponent},
   { path :"**", redirectTo:"404" ,pathMatch:"full"}
 ];
 

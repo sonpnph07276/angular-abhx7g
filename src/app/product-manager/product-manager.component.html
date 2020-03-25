@@ -19,28 +19,10 @@
               <th><a routerLink="/product-detail/{{product.id}}">{{product.name}}</a></th>
               <th>{{product.price}}</th>
               <th><button class="btn btn-primary" (click)="removeItem(product.id)">Remove Item</button></th>
-              <th><button data-target="#viewsp"  data-toggle="modal" class="btn btn-primary" (click)="showDetail(product)">View Item</button></th>
+              <th><button class="btn btn-primary" (click)="selected">View item</button></th>
             </tr>
             
-            <div class="modal fade" id="viewsp" >
-              <div class="modal-dialog">
-               <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button>
-                </div>
-                  <div class="modal-body">
-                    <div class="col-md-8">
-                      <li>{{product.view1}}</li>
-                      <li>{{product.view2}}</li>
-                      <li>{{product.view3}}</li>
-                    </div>              
-                  </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-Close" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-               </div>
-            </div>
+            
           </thead>
         </table>
 </div>  

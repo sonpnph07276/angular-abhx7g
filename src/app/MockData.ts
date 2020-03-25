@@ -6,10 +6,7 @@ export const data : Product[] = [
         price: 25.99,
         desc: "Nội dung mô tả sản phẩm",
         img: 'https://dummyimage.com/700x400/000/fff',
-        Stt: false,
-        view1: "Giao ngay từ cửa hàng gần bạn nhất",
-        view2: "Chuyển danh bạ, dữ liệu qua máy mới",
-        view3: "Mang nhiều màu để bạn lựa chọn"
+        Status: false,
     }, 
     {
         id: 2,
@@ -17,10 +14,7 @@ export const data : Product[] = [
         price: 25.99,
         desc: "Nội dung mô tả sản phẩm",
         img: 'https://dummyimage.com/700x400/000/fff',
-        Stt: true,
-        view1: "Giao ngay từ cửa hàng gần bạn nhất",
-        view2: "Chuyển danh bạ, dữ liệu qua máy mới",
-        view3: "Mang nhiều màu để bạn lựa chọn"
+        Status: true,
     }, 
     {
         id: 3,
@@ -28,9 +22,6 @@ export const data : Product[] = [
         price: 25.99,
         desc: "Nội dung mô tả sản phẩm",
         img: 'https://dummyimage.com/700x400/000/fff',
-        Stt: true,
-        view1: "Giao ngay từ cửa hàng gần bạn nhất",
-        view2: "Chuyển danh bạ, dữ liệu qua máy mới",
-        view3: "Mang nhiều màu để bạn lựa chọn"
+        Status: true,
     } 
 ]

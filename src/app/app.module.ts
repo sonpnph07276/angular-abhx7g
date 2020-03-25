@@ -16,9 +16,6 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProductManagerComponent } from './product-manager/product-manager.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ServiceComponent } from './service/service.component';
-import { ContactComponent } from './contact/contact.component'
  
 @NgModule({
   declarations: [
@@ -32,9 +29,6 @@ import { ContactComponent } from './contact/contact.component'
     HomeComponent,
     AboutComponent,
     ProductManagerComponent,
-    NotFoundComponent,
-    ServiceComponent,
-    ContactComponent,
   ],
   imports: [
     BrowserModule,

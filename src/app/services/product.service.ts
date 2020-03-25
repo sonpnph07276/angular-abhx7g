@@ -1,37 +1,31 @@
-import { Injectable } from '@angular/core';
-import { data } from '../MockData';
-import { Product } from '../Product';
+import { Injectable } from "@angular/core";
+import { data } from "../MockData";
+import { Product } from "../Product";
 
 @Injectable()
 export class ProductService {
   products = data;
-  constructor() { }
+  constructor() {}
 
-  getProducts(){
-      console.log('Hello');
-      return this.products;
+  getProducts() {
+    console.log("Hello");
+    return this.products;
   }
-  getProduct(){
-
+  getProduct() {
+    return this.products;
   }
-  removeProduct(id){
-    return this.products = this.products.filter(product => product.id != id)
+  removeProduct(id) {
+    return (this.products = this.products.filter(product => product.id != id));
   }
-  addProduct(product){
-
+  addProduct(product) {
     console.log(product);
 
-    let newObj = {id: 6,...product};
+    let newObj = { id: 6, ...product };
     console.log(newObj);
-    
+
     this.products.push(newObj);
-    console.log(this.products)
-
+    console.log(this.products);
   }
-  editProduct(){
-
-  }
-  addCartProduct(){
-
-  }
+  editProduct() {}
+  addCartProduct() {}
 }

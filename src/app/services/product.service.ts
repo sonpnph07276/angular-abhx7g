@@ -1,26 +1,37 @@
-import { Injectable } from "@angular/core";
-import { data } from "../MockData";
-import { Product } from "../Product";
+import { Injectable } from '@angular/core';
+import { data } from '../MockData';
+import { Product } from '../Product';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ProductService {
   products = data;
-  constructor() {}
+  api = 'https://5e7b1ab90e04630016332ad0.mockapi.io'
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  getProducts() { //lay danh sach san pham
-    return this.products;
+    getProducts(): Observable<Product[]>{
+      return this.http.get<Product[]>(`${this.api}/product`);
   }
-  getProduct(id){// chi tiet san pham
-
+  getProduct(id){
+    return this.products.find(product => product.id == id);
   }
-  addProduct(product) {
-    let newObj = { id: 6, ...product };
+  removeProduct(id){
+    return this.products = this.products.filter(product => product.id != id)
+  }
+  addProduct(product){
+    console.log(product);
+    let newObj = {id: 6,...product};
+    console.log(newObj);
     this.products.push(newObj);
+    console.log(this.products)
   }
-  removeProduct(id) {
-    return (this.products = this.products.filter(product => product.id != id));
-  }
+  editProduct(){
 
-  editProduct() {}
-  addCartProduct() {}
+  }
+  addCartProduct(){
+
+  }
 }

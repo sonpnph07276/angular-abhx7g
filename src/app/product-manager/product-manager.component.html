@@ -1,25 +1,46 @@
-<h2>Manager Product</h2>
-        <table class="table table-bordered">
+<header class="d-flex mb-3 pt-5 justify-content-between">
+  <h2>Manager Product</h2>
+  <button routerLink="/product-add" class="btn btn-primary">Add Product</button>
+</header>
+<div class="row" >
+        <table class="table table-bordered" >
           <thead>
             <tr>
               <th>ID</th>
               <th>Product Name</th>
               <th>Price</th>
               <th>Action</th>
+              <th>Thông tin SP</th>
             </tr>
           </thead>
-             <thead>
-            <tr *ngFor="let product of products">
-              <th><a href="#">{{product.id}}</a></th>
-              <th><a href="#">{{product.name}}</a></th>
-              <th><p class="card-text">{{product.desc}}</p></th>
-              <th>
-                <button class="btn btn-primary" (click)="showDetail(product)">Hiển Thị</button> &nbsp;
-              <button class="btn btn-primary" (click)="removeItem(product.id)">xóa</button>
-              </th>
+          <thead *ngFor="let product of products; index as i">
+            <tr>
+      <th scope="row">{{i}}</th>
+              <th><a routerLink="/product-detail/{{product.id}}">{{product.name}}</a></th>
+              <th>{{product.price}}</th>
+              <th><button class="btn btn-primary" (click)="removeItem(product.id)">Remove Item</button></th>
+              <th><button data-target="#viewsp"  data-toggle="modal" class="btn btn-primary" (click)="showDetail(product)">View Item</button></th>
             </tr>
+            
+            <div class="modal fade" id="viewsp" >
+              <div class="modal-dialog">
+               <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button>
+                </div>
+                  <div class="modal-body">
+                    <div class="col-md-8">
+                      <li>{{product.view1}}</li>
+                      <li>{{product.view2}}</li>
+                      <li>{{product.view3}}</li>
+                    </div>              
+                  </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-Close" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+               </div>
+            </div>
           </thead>
         </table>
-        <div class="detail" *ngIf="selected">
-  {{selected.name}}
-</div>
+</div>  

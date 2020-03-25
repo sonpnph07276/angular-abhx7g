@@ -1,24 +1,34 @@
-import { Component, OnInit } from "@angular/core";
-import { Product } from "../Product";
-import { ProductService } from "../services/product.service";
-
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../Product';
+import { ProductService } from '../services/product.service'
 @Component({
-  selector: "app-product-list",
-  templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.css"]
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  selected: Product;
   products: Product[];
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService
+  ) { }
 
-  ngOnInit() {
-    this.getProduct();
+  ngOnInit(): void {
+    this.getProducts();
   }
-  showDetail(product) {
-    this.selected = product;
+  getProducts(){
+    this.productService.getProducts().subscribe(response => this.products = response, error => console.log(error));
   }
-  getProduct() {
-    this.products = this.productService.getProduct();
+  // products;
+  // selected: Product;
+  // showDetail(product){
+  //   this.selected = product;
+  //   console.log(this.selected);
+  // }
+  removeItem(id){
+    this.products = this.productService.removeProduct(id);
+    // this.products = this.products.filter(product => product.id != id)
+  }
+  addToCart(){
+    
   }
 }

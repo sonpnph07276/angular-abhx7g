@@ -1,4 +1,4 @@
-<!-- <div class="row">
+<div class="row" *ngIf="product">
   <div class="col-6">
     <img src="{{product.img}}" alt="" class="img-fluid">
   </div>
@@ -6,7 +6,6 @@
     <h2>{{product.name}}</h2>
     <span>{{product.price}}</span>
     <p>{{product.desc}}</p>
-    <p>Tình trạng: {{ product.Stt ? 'Còn hàng' : 'Hết hàng'}}</p>
+    <p>Tình trạng: {{ product.status ? 'Còn hàng' : 'Hết hàng'}}</p>
   </div>
-</div> -->
-product Detail
+</div>

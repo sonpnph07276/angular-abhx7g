@@ -1,4 +1,7 @@
 /* Add application styles & imports to this file! */
 .form-group {
-padding-top: 60px;
+padding-top: 100px;
+}
+.my-4{
+  padding-top: 100px;
 }
